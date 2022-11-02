@@ -1,4 +1,7 @@
-from flask import Flask, render_template, url_for
+from pprint import pprint
+
+from flask import Flask, render_template, url_for, request
+import json
 
 app = Flask(__name__)
 
@@ -8,9 +11,11 @@ def hello():
     return render_template('index.html')
 
 
-@app.route('/postrequest')
+@app.route('/postrequest', methods=['POST'])
 def post_req():
-    return render_template('index.html')
+    data = json.loads(request.data)
+    pprint(data)
+    return '200'
 
 
 if __name__ == '__main__':

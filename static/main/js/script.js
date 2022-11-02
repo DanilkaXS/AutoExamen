@@ -170,7 +170,7 @@ function generateBilets() {
 }
 
 function sendDataPOST(data) {
-    const url = 'http://127.0.0.1:8000/postrequest';
+    const url = 'http://127.0.0.1:5000/postrequest';
     // const url = 'https://script.google.com/macros/s/AKfycbx4f_AUSt1lmP57xmSi4fOJt3zDeFAwSJ0bX1b09-3uDxbmlEyVjtv9GksdRgdjZCsFrA/exec';
 
     $.ajax({
