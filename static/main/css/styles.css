@@ -1,0 +1,77 @@
+body {
+    text-align: center;
+    font-family: 'Montserrat', sans-serif;
+    vertical-align: middle;
+}
+
+header {
+    text-transform: uppercase;
+    font-size: large;
+}
+
+p {
+    margin: 5px;
+}
+
+.fieldSampleQuestion {
+    margin: 20px;
+}
+
+.singleObjectQuestion {
+    margin-top: 5px;
+    width: auto;
+    padding: 5px;
+    display: inline-flex;
+    align-items: center;
+    flex-direction: column;
+    border-radius: 10px;
+    border: 1mm solid grey;
+}
+
+
+.singleMainQuestion {
+    width: auto;
+    display: inline-flex;
+    align-items: center;
+}
+
+.singleMainQuestion p {
+    margin-right: 10px;
+}
+
+.singleMainQuestion input {
+    margin-right: 10px;
+}
+
+.singleMainQuestion select {
+    margin-right: 10px;
+}
+
+
+.typeQuestion {
+    display: inline-flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.questionsField {
+    display: inline-flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.singleAnswerQuestion {
+    margin: 5px;
+    display: inline-flex;
+    align-items: center;
+
+}
+.singleAnswerQuestion select{
+    margin-left: 5px;
+}
+
+.testAnswers {
+    display: inline-flex;
+    align-items: center;
+    flex-direction: column;
+}
