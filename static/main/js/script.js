@@ -11,7 +11,7 @@ function orientationEditor() {
 
     } else if (orientationVal == "horizontal") {
         $("#biletEditor").css('width', '650px')
-        $("#biletEditor").css('height', '500px')
+        $("#biletEditor").css('height', '515px')
         $("#verticalIcon").css("display", "none")
         $("#horizontalIcon").css("display", "block")
         $("#horizontalIcon").css("padding-left", "5px")
@@ -122,7 +122,9 @@ function generateBilets() {
         }
     }
     const data = {
+        id: '',
         document: {
+            nameDocument: $("#nameDocumentGen").val(),
             orientation: $("#docOrientation").val(),
             head: "Міністерство освіти і науки, молоді та спорту України\n" +
                 "Ізмаїльський державний гуманітарний університет",
@@ -134,9 +136,10 @@ function generateBilets() {
             numberQuestionBilet: $("#numberQuestionBilet").val(),
             questionType: {},
             kafedra: $("#kafedra").val(),
-            protokol: [$("#numberProtokol").val(),$("#dateNumber").val(),$("#month").val(),$("#year").val()],
+            protokol: [$("#numberProtokol").val(), $("#dateNumber").val(), $("#month").val(), $("#year").val()],
             persKafedra: $("#persKafedra").val(),
             examinator: $("#examinator").val(),
+            numberBilet: $("#numberBilet").val()
         },
         questions: {
             openQuestions: {
@@ -171,16 +174,26 @@ function generateBilets() {
 
 function sendDataPOST(data) {
     const url = 'https://generator-exam-biletov.onrender.com/postrequest';
-    // const url = 'https://script.google.com/macros/s/AKfycbx4f_AUSt1lmP57xmSi4fOJt3zDeFAwSJ0bX1b09-3uDxbmlEyVjtv9GksdRgdjZCsFrA/exec';
+    // const url = 'http://127.0.0.1:5000/postrequest';
 
-    $.ajax({
+    let send = $.ajax({
         url: url,
         method: 'post',
         contentType: "application/json",
         dataType: 'json',
         data: JSON.stringify(data),
-    });
+        // beforesend: alert("SENDING: "),
+        async: false,
+        success: function (result) {
+            alert(result);
+        }
+    }).responseText;
+    console.log(send)
+    $("#body").append(`<a href=\"https://docs.google.com/document/d/${send}/edit?usp=sharing\">Посилання на документ</a>`)
+
+
 }
+
 
 
 

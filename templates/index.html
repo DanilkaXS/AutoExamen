@@ -9,7 +9,7 @@
     <script src="{{ url_for('static', filename = 'main/js/script.js') }}"></script>
 
 </head>
-<body>
+<body id="body" style='background-image: url("{{ url_for('static', filename = 'main/img/bg.jpg') }}")'>
 <header>
     <h3>Генератор екзамінаційних білетів</h3>
 </header>
@@ -103,6 +103,8 @@
     </div>
 </main>
 <footer style="margin: 15px">
+    <input type="number" id="numberBilet" placeholder="Кількість білетів">
+    <input type="text" id="nameDocumentGen" placeholder="Назва документу">
     <button onclick="generateBilets()">Сгенерувати білети</button>
 </footer>
 
