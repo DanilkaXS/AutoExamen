@@ -173,8 +173,8 @@ function generateBilets() {
 }
 
 function sendDataPOST(data) {
-    const url = 'https://generator-exam-biletov.onrender.com/postrequest';
-    // const url = 'http://127.0.0.1:5000/postrequest';
+    // const url = 'https://generator-exam-biletov.onrender.com/postrequest';
+    const url = 'http://127.0.0.1:5000/postrequest';
 
     let send = $.ajax({
         url: url,
