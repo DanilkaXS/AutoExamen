@@ -1,5 +1,3 @@
-from pprint import pprint
-
 from google.oauth2 import service_account
 from googleapiclient.discovery import build
 import requests
@@ -22,8 +20,6 @@ def help_page():
 @app.route('/postrequest', methods=['POST'])
 def post_req():
     data = json.loads(request.data)
-    # pprint(data)
-
     SCOPES = ['https://www.googleapis.com/auth/drive']
     SERVICE_ACCOUNT_FILE = 'service_account.json'
     credentials = service_account.Credentials.from_service_account_file(
@@ -35,12 +31,9 @@ def post_req():
         'mimeType': 'application/vnd.google-apps.document',
         'parents': ["1md3FixnbjMBiGtEXKoBVUd1rP8OLZOE2"],
     }
-
     r = service.files().create(body=file_metadata, fields='id').execute()
-
     results = service.files().list(pageSize=10,
                                    fields="nextPageToken, files(id,name,description)").execute()
-    # pprint(results['files'])
     for i in results['files']:
         print(i)
         try:
