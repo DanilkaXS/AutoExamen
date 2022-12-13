@@ -1,8 +1,8 @@
 function orientationEditor() {
     const orientationVal = $("#docOrientation").val();
     if (orientationVal == "vertical") {
-        $("#biletEditor").css('width', '500px')
-        $("#biletEditor").css('height', '700px')
+        $("#biletEditor").css('width', '600px')
+        $("#biletEditor").css('height', '750px')
         $("#verticalIcon").css("padding-left", "5px")
         $("#verticalIcon").css("display", "block")
         $("#horizontalIcon").css("display", "none")
@@ -10,8 +10,8 @@ function orientationEditor() {
 
 
     } else if (orientationVal == "horizontal") {
-        $("#biletEditor").css('width', '650px')
-        $("#biletEditor").css('height', '515px')
+        $("#biletEditor").css('width', '750px')
+        $("#biletEditor").css('height', '600px')
         $("#verticalIcon").css("display", "none")
         $("#horizontalIcon").css("display", "block")
         $("#horizontalIcon").css("padding-left", "5px")
@@ -173,7 +173,7 @@ function generateBilets() {
 }
 
 function sendDataPOST(data) {
-    const url = 'https://generator-exam-biletov.onrender.com/postrequest';
+    const url = 'http://127.0.0.1:5000/postrequest';
 
     let send = $.ajax({
         url: url,
