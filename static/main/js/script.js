@@ -100,9 +100,16 @@ function generateBilets() {
     }
 
     var openQuestionField = {}
-    for (let i = 1; i <= $("#numberOpenQuestion").val(); i++) {
-        openQuestionField["openQuestion" + i] = {id: i, text: $("#openQuestion" + i + "Text").val()}
+    var openQuestions = $("#OpenQuestions").val().split("\n")
+    var numberOpenQuestion = openQuestions.length-1
+
+    for (let i = 0; i <= numberOpenQuestion; i++) {
+        openQuestionField["openQuestion" + i] = {id: i, text: openQuestions[i]}
     }
+
+    console.log(openQuestionField)
+
+
     var testQuestionField = {}
     for (let i = 1; i <= $("#numberTestQuestion").val(); i++) {
         testQuestionField["testQuestion" + i] = {
